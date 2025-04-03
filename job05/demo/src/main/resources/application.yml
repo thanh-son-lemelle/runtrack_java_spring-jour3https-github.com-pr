@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: demo
+  profiles:
+    active: dev # profil par défaut
+
+greeting:
+  message: Bonjour depuis YML ! # valeur par défaut (si aucun profil actif)
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+greeting:
+  message: "👋 Bonjour depuis le profil DEV !"
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+greeting:
+  message: "🔐 Bienvenue en PRODUCTION."
